@@ -234,6 +234,8 @@ with respect to documented and/or tested features.
 
 - Fixed: `matplotlib.visuals.plot3` now supports `MeshQuad1` by splitting
   it into triangle mesh and using the respective plotting routine.
+- Fixed: `supermeshing.intersect` will now properly restrict the supermesh to the
+  intersection of the two meshes in 1D.
 
 ### [12.0.1] - 2026-01-19
 
