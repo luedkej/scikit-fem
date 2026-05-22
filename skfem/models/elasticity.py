@@ -27,9 +27,25 @@ def lame_parameters(E, nu):
 
 
 def plane_stress(E, nu):
-    """Map Young's modulus and Poisson ratio to plane stress."""
-    return (E * (1. + 2. * nu) / (1. + nu) ** 2,
-            nu / (1. + nu))
+    """Map Young's modulus and Poisson ratio to plane stress lame parameters.
+    
+    Parameters
+    ----------
+    E
+        Young's modulus
+    nu
+        Poisson ratio
+
+    Returns
+    -------
+    float
+        The first Lamé parameter for plane stress scenario (lambda)
+    float
+        The second Lamé parameter for plane stress scenario (mu)
+
+    """
+    return (E * nu / (1. - nu**2),
+            E / (2. * (1. + nu)))
 
 
 def linear_stress(Lambda=1., Mu=1.):
